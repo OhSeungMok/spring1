@@ -1,0 +1,10 @@
+package ch02_pjt_01;
+
+public class MyCalculator {
+	public void calAdd(int fNum, int sNum) {
+		// CalAdd cal = new CalAdd(); ICalculator은 부모 CalAdd는 자식임으로 둘 중 아무거나 해도 상관없음
+		ICalculator cal = new CalAdd();
+		int value = cal.doOperation(fNum, sNum)
+		System.out.println(value);
+	}
+}
