@@ -50,6 +50,7 @@
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="ch04_pjt_01"/>
 			<item value="ch03_pjt_03"/>
 			<item value="ch03_pjt_01"/>
 		</list>

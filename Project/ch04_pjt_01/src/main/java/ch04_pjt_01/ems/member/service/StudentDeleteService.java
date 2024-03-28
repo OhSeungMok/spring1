@@ -1,5 +1,6 @@
 package ch04_pjt_01.ems.member.service;
 
+import ch04_pjt_01.ems.member.Student;
 import ch04_pjt_01.ems.member.dao.StudentDao;
 
 public class StudentDeleteService {
@@ -8,5 +9,17 @@ public class StudentDeleteService {
 	public StudentDeleteService(StudentDao studentDao) {
 		this.studentDao = studentDao;
 	}
+	
 	//아래에 메서드 추가
+	public void delete(String sNum) {
+		if(verify(sNum)) {
+			studentDao.delete(sNum);
+		}	
+		else
+			System.out.println("삭제하고자 하는 학생이 없음.");
+	}
+	public Boolean verify(String sNum) { //boolean == Boolean
+		Student student = studentDao.select(sNum);
+		return student != null ? true : false ;
+	}
 }

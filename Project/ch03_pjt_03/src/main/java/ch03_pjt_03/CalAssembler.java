@@ -16,7 +16,6 @@ public class CalAssembler {
           this.calSub = calSub;
           this.calMul = calMul;
           this.calDiv = calDiv;
-          
       }
     
 /*    public CalAssembler() {

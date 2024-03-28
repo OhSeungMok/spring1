@@ -9,7 +9,9 @@ public class StudentDao {
 	// Hashmap 클래스로 학생들을 관리할거임
 	private Map<String, Student> studentDB = new HashMap<String, Student>();  //Student 객체를 value로 저장하겠다.
 	//기본 생성자
-	public StudentDao() { }
+	public StudentDao() {
+		System.out.println("StudentDao 기본 생성자 호출됨");
+	}
 	
 	public void insert(Student student) { //입력
 	      studentDB.put(student.getsNum(), student);

@@ -19,6 +19,10 @@ public class InitSampleData {
 	private char[] sGenders;
 	private String[] sMajors;
 	
+	public InitSampleData() { // 기본 생성자 정의
+		System.out.println("InitSampleData기본 생성자 호출됨");
+	}
+	
 	public String[] getsNums() {
 		return sNums;
 	}

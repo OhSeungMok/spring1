@@ -8,8 +8,8 @@ public class MainClass {
 		//new CalAssembler();
 		GenericXmlApplicationContext ctx = new GenericXmlApplicationContext("classpath:applicationContext.xml");
 				    
-				       CalAssembler calAssembler = ctx.getBean("calAssembler", CalAssembler.class);
-				       calAssembler.assemble();
-				   ctx.close();
+		CalAssembler calAssembler = ctx.getBean("calAssembler", CalAssembler.class);
+		calAssembler.assemble();
+		ctx.close();
 	}
 }
