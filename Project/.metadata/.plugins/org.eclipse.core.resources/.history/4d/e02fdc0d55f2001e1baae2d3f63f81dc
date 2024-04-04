@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="injectionBean" class="ch04_pjt_02.scope.InjectionBean"/>
+
+	
+<!-- 	<bean id="dependencyBean" class="ch04_pjt_02.scope.DependencyBean" >
+			<constructor-arg ref="injectionBean"/>
+		</bean> -->
+		
+<!-- 
+		dependencyBean을 영역을 달리하여 사용할 떄	
+		<bean id="dependencyBean" class="ch04_pjt_02.scope.DependencyBean" scope="prototype"  > 
+		scope="prototype"를 사용하면 dependencyBean를 ctx로 불러올 때 마다 영역을 달리함.
+		Proto는 모두 다른 인스턴스이고 Single은 모두 같은 인스턴스를 가리킨다.
+			<constructor-arg ref="injectionBean"/>
+		</bean> -->
+		
+	
+	
+</beans>

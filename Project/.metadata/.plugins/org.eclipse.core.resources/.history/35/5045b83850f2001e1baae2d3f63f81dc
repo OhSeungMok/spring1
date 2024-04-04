@@ -1,0 +1,30 @@
+package ch04_pjt_02.scope;
+
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+
+		GenericXmlApplicationContext ctx = 
+			new GenericXmlApplicationContext("classpath:applicationContext.xml"); //DependencyBean객체와 InjectionBean객체를 쓰기 위해
+
+		DependencyBean dependencyBean_01 = 
+			ctx.getBean("dependencyBean", DependencyBean.class);
+		DependencyBean dependencyBean_02 = 
+			ctx.getBean("dependencyBean", DependencyBean.class);
+
+		if (dependencyBean_01.equals(dependencyBean_02)) { //equals와 == 차이 equals는 내용 즉 값을 비교하고, ==은 주소를 비교
+		if (dependencyBean_01 == (dependencyBean_02)) {
+			System.out.println("dependencyBean_01 == dependencyBean_02");
+
+		} else {
+			System.out.println("dependencyBean_01 != dependencyBean_02");
+
+		}
+
+		ctx.close();
+
+	}
+
+}

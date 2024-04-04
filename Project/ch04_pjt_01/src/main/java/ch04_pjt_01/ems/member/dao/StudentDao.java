@@ -1,8 +1,11 @@
 package ch04_pjt_01.ems.member.dao;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 
+import ch04_pjt_01.ems.member.DBConnectionInfo;
 import ch04_pjt_01.ems.member.Student; //패키지가 다르기 때문에 Student도 import해야됨.
 
 public class StudentDao {
@@ -32,4 +35,18 @@ public class StudentDao {
 	      return studentDB;
 	}
 	
+	public Student selectById(String sId) { //id검색
+		  Set<String> keys = studentDB.keySet();
+	      Iterator<String> iterator = keys.iterator();
+
+	      while (iterator.hasNext()) {
+	         String key = iterator.next();
+	         Student info = studentDB.get(key);
+	         if (info.getsId().equals(sId)) {
+	        	 return info;
+	         }  
+	      }
+	      
+	      return null;
+	}	
 }

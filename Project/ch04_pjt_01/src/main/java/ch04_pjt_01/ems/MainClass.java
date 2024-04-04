@@ -3,6 +3,7 @@ package ch04_pjt_01.ems;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
 import ch04_pjt_01.ems.member.Student;
+import ch04_pjt_01.ems.member.service.EMSInformationService;
 import ch04_pjt_01.ems.member.service.PrintStudentInformationService;
 import ch04_pjt_01.ems.member.service.StudentDeleteService;
 import ch04_pjt_01.ems.member.service.StudentModifyService;
@@ -13,10 +14,15 @@ import ch04_pjt_01.ems.utils.InitSampleData;
 public class MainClass {
 
 	public static void main(String[] args) {
-		GenericXmlApplicationContext ctx = new GenericXmlApplicationContext("classpath:applicationContext.xml"); //자바 빈 객체를 갖고오겠다!
+//		GenericXmlApplicationContext ctx = new GenericXmlApplicationContext("classpath:applicationContext.xml"); //자바 빈 객체를 갖고오겠다!
+//		GenericXmlApplicationContext ctx = new GenericXmlApplicationContext("classpath:appCtx1.xml", "classpath:appCtx2.xml", "classpath:appCtx3.xml"); //자바 빈 객체를 갖고오겠다!
+//		String appCtxs[] = {"classpath:appCtx1.xml", "classpath:appCtx2.xml", "classpath:appCtx3.xml"};
+//		GenericXmlApplicationContext ctx = new GenericXmlApplicationContext(appCtxs);GenericXmlApplicationContext ctx = new GenericXmlApplicationContext("classpath:appCtxImport.xml"); //자바 빈 객체를 갖고오겠다!
+		GenericXmlApplicationContext ctx = new GenericXmlApplicationContext("classpath:appCtxImport.xml"); //자바 빈 객체를 갖고오겠다!
 		
+
 		//샘플데이터
-		InitSampleData initSampleData = ctx.getBean("initSampleData", InitSampleData.class);
+		InitSampleData initSampleData = ctx.getBean("initSampleData", InitSampleData.class);		
 		
 		//getter 메서드 호출
 		String[] sNums = initSampleData.getsNums(); //getsNums 호출 
@@ -57,6 +63,20 @@ public class MainClass {
 	      System.out.print("|sGender:" + selectedstudent.getsGender() + "\t");
 	      System.out.println("|sMajor:" + selectedstudent.getsMajor());
 	      System.out.println("END ----------------------------");
+	      
+	    //특정 학번에 해당하는 학생 한명만 검색하고 출력
+		Student selectedIdstudent = studentSelectService.selectById("rabbit"); //검색 및 출력
+		    if(selectedIdstudent != null) {
+		      System.out.println("STUDENT START ------------------");
+		      System.out.print("sNum:" + selectedIdstudent.getsNum() + "\t");
+		      System.out.print("|sId:" + selectedIdstudent.getsId() + "\t");
+		      System.out.print("|sPw:" + selectedIdstudent.getsPw() + "\t");
+		      System.out.print("|sName:" + selectedIdstudent.getsName() + "\t");
+		      System.out.print("|sAge:" + selectedIdstudent.getsAge() + "\t");
+		      System.out.print("|sGender:" + selectedIdstudent.getsGender() + "\t");
+		      System.out.println("|sMajor:" + selectedIdstudent.getsMajor());
+		      System.out.println("END ----------------------------");
+		    }
 	    
 	    //특정 학번에 해당하는 학생의 정보를 수정하고 출력
 	    StudentModifyService modifyService = ctx.getBean("studentModifyService", StudentModifyService.class);
@@ -70,5 +90,10 @@ public class MainClass {
 	    
 	    psi.printStudentInfo();
 	    
+	    //EMS시스템 정보 출력
+	    EMSInformationService obems = ctx.getBean("eMSInformationService", EMSInformationService.class);
+	    obems.printEMSInformation();
+	    
+	    ctx.close(); //컨테이너 종료
 	}
 }
