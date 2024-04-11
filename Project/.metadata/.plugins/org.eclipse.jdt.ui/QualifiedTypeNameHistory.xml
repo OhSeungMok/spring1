@@ -16,4 +16,6 @@
     <fullyQualifiedTypeName name="ch04_pjt_01.ems.member.service.StudentDeleteService"/>
     <fullyQualifiedTypeName name="java.util.Iterator"/>
     <fullyQualifiedTypeName name="ch04_pjt_01.ems.member.service.EMSInformationService"/>
+    <fullyQualifiedTypeName name="ch05_pjt_01.contact.service.ContactSearchService"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
 </qualifiedTypeNameHistroy>
