@@ -1,0 +1,46 @@
+package test_Student;
+
+import java.util.*;
+
+public class StudentService {
+	StudentRepository sr = new StudentRepository();
+
+	//싱글톤 객체를 가져오기 위한 코드 구현
+	private static StudentService service = new StudentService();
+	private StudentService() { }
+	
+	static StudentService getInstance() {
+		return service;
+	}
+	Scanner sc = new Scanner(System.in);
+	
+	public void save() {
+		//학생정보를 입력받고 처리결과를 출력 구현
+		StudentDTO studentDTO = new StudentDTO();
+		System.out.print("번호>");
+		studentDTO.setStudentNumber(sc.next());
+		System.out.print("이름>");
+		studentDTO.setStudentName(sc.next());
+		System.out.print("핸드폰>");
+		studentDTO.setStudentMobile(sc.next());
+		System.out.print("전공>");
+		studentDTO.setStudentMajor(sc.next());
+		sc.hasNextLine();
+		boolean success = sr.save(studentDTO);
+		if(success) {
+			System.out.println("등록성공");
+		} else {
+			System.out.println("등록실패");
+		}
+	}
+	public void fundAll() {
+		//map 가져오기 위한 코드 및 출력 코드 구현
+				Map<String, StudentDTO> studentMap = sr.findAll();
+				
+				List<String> keySet = new ArrayList<>(studentMap.keySet());
+
+				for(String key : keySet) {
+					System.out.println(studentMap.get(key)+"12");
+				}
+	}
+}

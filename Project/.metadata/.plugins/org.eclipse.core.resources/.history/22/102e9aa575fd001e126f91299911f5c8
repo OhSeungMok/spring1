@@ -1,0 +1,47 @@
+package test_Student;
+
+public class StudentDTO {
+	private String studentNumber;
+	private String studentName;
+	private String studentMobile;
+	private String studentMajor;
+	
+	public String getStudentNumber() {
+		return studentNumber;
+	}
+	public void setStudentNumber(String studentNumber) {
+		this.studentNumber = studentNumber;
+	}
+	public String getStudentName() {
+		return studentName;
+	}
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
+	}
+	public String getStudentMobile() {
+		return studentMobile;
+	}
+	public void setStudentMobile(String studentMobile) {
+		this.studentMobile = studentMobile;
+	}
+	public String getStudentMajor() {
+		return studentMajor;
+	}
+	public void setStudentMajor(String studentMajor) {
+		this.studentMajor = studentMajor;
+	}
+	public StudentDTO() {}
+	public StudentDTO(String studentNumber, String studentName, String studentMobile, String studentMajor) {
+		super();
+		this.studentNumber = studentNumber;
+		this.studentName = studentName;
+		this.studentMobile = studentMobile;
+		this.studentMajor = studentMajor;
+	}
+	@Override
+	public String toString() {
+//		return "StudentDTO [studentName=" + studentName + ", studentMobile=" + studentMobile + ", studentMajor=" + studentMajor +"]";
+		System.out.printf("StudentDTO [ studentName=%s, studentMobile=%s,studentMajor=%s\n",studentNumber,studentName, studentMobile, studentMajor);
+		return super.toString();
+	}
+}

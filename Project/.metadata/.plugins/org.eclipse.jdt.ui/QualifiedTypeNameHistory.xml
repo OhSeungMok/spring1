@@ -17,5 +17,10 @@
     <fullyQualifiedTypeName name="java.util.Iterator"/>
     <fullyQualifiedTypeName name="ch04_pjt_01.ems.member.service.EMSInformationService"/>
     <fullyQualifiedTypeName name="ch05_pjt_01.contact.service.ContactSearchService"/>
+    <fullyQualifiedTypeName name="javax.annotation.Resource"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Qualifier"/>
+    <fullyQualifiedTypeName name="javax.inject.Inject"/>
+    <fullyQualifiedTypeName name="javax.inject.Named"/>
+    <fullyQualifiedTypeName name="java.lang.Override"/>
 </qualifiedTypeNameHistroy>

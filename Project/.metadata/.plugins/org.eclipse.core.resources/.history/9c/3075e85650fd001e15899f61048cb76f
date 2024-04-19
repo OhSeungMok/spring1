@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- beans 안에 bean이 있어야 함. beans설정을 해야함 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- InitSampleData 빈 -->
+	<bean id="initSampleData"
+	   class="ch06_pjt_01.ems.utils.InitSampleData">
+	   <!-- initSampleData = new InitSampleData와 같은 의미 -->
+	   <!-- 속성(property)는 setsNums과 같은 역할, initSampleData의 setsNums를 호출! -->
+	   <property name="sNums">
+	      <array>
+	         <value>hbs001</value>
+	         <value>hbs002</value>
+	         <value>hbs003</value>
+	         <value>hbs004</value>
+	         <value>hbs005</value>
+	      </array>
+	   </property>
+	   <!-- 속성(property)는 setsIds과 같은 역할, initSampleData의 setsIds를 호출! -->
+	   <property name="sIds">
+	      <array>
+	         <value>rabbit</value>
+	         <value>hippo</value>
+	         <value>raccoon</value>
+	         <value>elephant</value>
+	         <value>lion</value>
+	      </array>
+	   </property>
+	   <!-- 속성(property)는 setsPws과 같은 역할, initSampleData의 setsPws를 호출! -->
+	   <property name="sPws">
+	      <array>
+	         <value>p0001</value>
+	         <value>p0002</value>
+	         <value>p0003</value>
+	         <value>p0004</value>
+	         <value>p0005</value>
+	      </array>
+	   </property>
+	   <!-- 속성(property)는 setsNames과 같은 역할, initSampleData의 setsNames를 호출! -->
+	   <property name="sNames">
+	      <array>
+	         <value>agatha</value>
+	         <value>barbara</value>
+	         <value>chris</value>
+	         <value>doris</value>
+	         <value>elva</value>
+	      </array>
+	   </property>
+	   <!-- 속성(property)는 setsAges과 같은 역할, initSampleData의 setsAges를 호출! -->
+	   <property name="sAges">
+	      <array>
+	         <value>19</value>
+	         <value>22</value>
+	         <value>20</value>
+	         <value>27</value>
+	         <value>19</value>
+	      </array>
+	   </property>
+	   <!-- 속성(property)는 setsGenders과 같은 역할, initSampleData의 setsGenders를 호출! -->
+	   <property name="sGenders">
+	      <array>
+	         <value>M</value>
+	         <value>W</value>
+	         <value>W</value>
+	         <value>M</value>
+	         <value>M</value>
+	      </array>
+	   </property>
+	   <!-- 속성(property)는 setsMajors과 같은 역할, initSampleData의 setsMajors를 호출! -->
+	   <property name="sMajors">
+	      <array>
+	         <value>English</value>
+	         <value>Korean</value>
+	         <value>French</value>
+	         <value>Philosophy</value>
+	         <value>History</value>
+	      </array>
+	   </property>
+	</bean>
+	<!-- StudentDao 빈 생성 -->
+	<!-- studentDao = new ch04_pjt_01.ems.member.dao.StudentDao();와 같은 의미 -->
+	<bean id = "studentDao" class= "ch06_pjt_01.ems.member.dao.StudentDao" />
+	
+	<!-- StudentRegisterService 빈 생성 -->
+    <bean id="studentRegisterService" class="ch06_pjt_01.ems.member.service.StudentRegisterService">
+       <!-- StudentRegisterService에 studentRegisterService란 객체로 파라미터 -->
+       <constructor-arg ref="studentDao" />
+       <!-- studentDao라는 파라미터 하나를 호출해서 studentRegisterService를 만듬 --> 
+    </bean>
+    
+    <!-- StudentAllSelectService 빈 생성 -->
+    <bean id="studentAllSelectService" class="ch06_pjt_01.ems.member.service.StudentAllSelectService">
+       <!-- StudentAllSelectService에 studentAllSelectService란 객체로 파라미터 -->
+       <constructor-arg ref="studentDao" />
+       <!-- 파라미터가 하나 있는 생성자 studentDao 호출 -->
+    </bean>
+    
+    <!-- StudentSelectService 빈 생성 -->
+    <bean id="studentSelectService" class="ch04_pjt_01.ems.member.service.StudentSelectService">
+       <!-- StudentSelectService에 studentSelectService란 객체로 파라미터 -->
+       <constructor-arg ref="studentDao" />
+       <!-- 파라미터가 하나 있는 생성자 studentDao 호출해서 studentSelectService를 만듬 -->
+    </bean>
+    
+    <!-- StudentModifyService 빈 생성 -->
+    <bean id="studentModifyService" class="ch04_pjt_01.ems.member.service.StudentModifyService">
+       <!-- StudentModifyService에 studentModifyService란 객체로 파라미터 -->
+       <constructor-arg ref="studentDao" />
+       <!-- 파라미터가 하나 있는 생성자 studentDao 호출해서 studentModifyService를 만듬 -->
+    </bean>
+    
+    <!-- StudentDeleteService 빈 생성 -->
+    <bean id="studentDeleteService" class="ch04_pjt_01.ems.member.service.StudentDeleteService">
+       <!-- StudentDeleteService에 studentDeleteService란 객체로 파라미터 -->
+       <constructor-arg ref="studentDao" />
+       <!-- 파라미터가 하나 있는 생성자 studentDao 호출해서 studentDeleteService를 만듬 -->
+    </bean>
+    
+    <!-- PrintStudentInformationService 빈 생성 -->
+    <bean id="printStudentInformationService" class="ch04_pjt_01.ems.member.service.PrintStudentInformationService">
+       <!-- PrintStudentInformationService에 printStudentInformationService란 객체로 파라미터 -->
+       <constructor-arg ref="studentAllSelectService" />
+    </bean>
+    
+</beans>
