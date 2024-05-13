@@ -2,6 +2,7 @@ package ch05_pjt_01.contact;
 
 import org.springframework.context.support.GenericXmlApplicationContext;
 
+
 import ch05_pjt_01.contact.service.ContactRegisterService;
 import ch05_pjt_01.contact.service.ContactSearchService;
 import ch05_pjt_01.contact.utils.InitSampleData;

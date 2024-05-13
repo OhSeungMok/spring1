@@ -9,7 +9,13 @@ import ch05_pjt_01.contact.ContactSet;
 import ch05_pjt_01.contact.dao.ContactDao;
 
 public class ContactRegisterService {
+//	@Autowired
 	@Inject //맴버변수 자동 주입
+//	@Inject를 이용한 의존 객체 자동 주입
+//	맴버 변수, 생성자, 메서드에 사용 가능!
+//	@Named 애너테이션 이용
+//	특정 객체를 지정할수 있음, 또한 @Autowired처럼 특정 객체를 지정하지 않으면 에러가 발생
+
 	@Named("contactDao3")
 	private ContactDao contactDao = null;
 	/* private ContactDao contactDao=null; 과 같음 생성자에서 아무 값도 할당해주지 않으면 null  */

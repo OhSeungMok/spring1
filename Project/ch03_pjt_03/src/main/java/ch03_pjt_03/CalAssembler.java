@@ -7,9 +7,7 @@ public class CalAssembler {
     CalMul calMul;
     CalDiv calDiv;
     
-    public CalAssembler(MyCalculator calculator, 
-            CalAdd calAdd, CalSub calSub, 
-            CalMul calMul, CalDiv calDiv) {
+    public CalAssembler(MyCalculator calculator, CalAdd calAdd, CalSub calSub, CalMul calMul, CalDiv calDiv) {
           
     	  this.calculator = calculator;
           this.calAdd = calAdd;

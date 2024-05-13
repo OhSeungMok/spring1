@@ -1,7 +1,9 @@
 package ch06_pjt_01.ems;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
+import ch06_pjt_01.ems.configuration.MemberConfig;
 import ch06_pjt_01.ems.member.Student;
 import ch06_pjt_01.ems.member.service.EMSInformationService;
 import ch06_pjt_01.ems.member.service.PrintStudentInformationService;
@@ -20,7 +22,11 @@ public class MainClass {
 //		GenericXmlApplicationContext ctx = new GenericXmlApplicationContext(appCtxs);GenericXmlApplicationContext ctx = new GenericXmlApplicationContext("classpath:appCtxImport.xml"); //자바 빈 객체를 갖고오겠다!
 //		GenericXmlApplicationContext ctx = new GenericXmlApplicationContext("classpath:appCtxImport.xml"); //자바 빈 객체를 갖고오겠다!
 		
+		//MemberConfig라는 자바 파일에서 만든 자바 빈객체를 가져와 사용할 거임 
+		//AnnotationConfigApplicationContext ctx =new AnnotationConfigApplicationContext(MemberConfig.class); 
 
+		
+		
 		//샘플데이터
 		InitSampleData initSampleData = ctx.getBean("initSampleData", InitSampleData.class);		
 		

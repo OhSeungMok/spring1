@@ -8,6 +8,10 @@ import ch05_pjt_01.contact.dao.ContactDao;
 public class ContactRegisterService {
 	//@Autowired
 	//@Resource
+//	Resource는 빈의 이름을 이용해서 의존 객체를 자동으로 주입함
+//	빈 객체의 이름을 이용한 의존 객체 자동 주입
+//	필드, 메서드에 사용 가능(생성자 사용 불가능)
+
 	private ContactDao contactDao = null;
 	/* private ContactDao contactDao=null; 과 같음 생성자에서 아무 값도 할당해주지 않으면 null  */
     

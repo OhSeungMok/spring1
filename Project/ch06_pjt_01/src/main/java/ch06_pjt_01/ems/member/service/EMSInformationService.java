@@ -22,6 +22,9 @@ public class EMSInformationService {
 	private Map<String, String> administrators;
 	private Map<String, DBConnectionInfo> dbInfos; //키값은 string, value는 DBConnectionInfo타입의 객체로
 	
+	public EMSInformationService() {
+	}
+	
 	public String getInfo() {
 		return info;
 	}

@@ -1,0 +1,5 @@
+#Tomcat publish data
+#Thu May 09 16:28:11 KST 2024
+org.eclipse.jst.jee.server\:ch07_pjt_01=D\:\\Spring1\\Install\\Tomcat 9.0\\wtpwebapps\\ch07_pjt_01
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\ahr50\\.m2\\repository\\org\\springframework\\spring-web\\5.2.9.RELEASE\\spring-web-5.2.9.RELEASE.jar=D\:\\Spring1\\Install\\Tomcat 9.0\\wtpwebapps\\ch07_pjt_02\\WEB-INF\\lib\\spring-web-5.2.9.RELEASE.jar
+org.eclipse.jst.jee.server\:ch07_pjt_02=D\:\\Spring1\\Install\\Tomcat 9.0\\wtpwebapps\\ch07_pjt_02

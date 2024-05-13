@@ -7,6 +7,10 @@ import ch05_pjt_01.contact.dao.ContactDao;
 
 public class ContactRegisterService {
 	@Autowired
+//	Autowired는 적합한 타입이 일치한 데이터 타입을 이용해서 의존 객체를 자동으로 주입함.
+//	데이터 타입을 이용한 의존 객체 자동 주입
+//	필드, 생성자, 메서드에 사용 가능
+
 	private ContactDao contactDao = null;
 	/* private ContactDao contactDao=null; 과 같음 생성자에서 아무 값도 할당해주지 않으면 null  */
     
