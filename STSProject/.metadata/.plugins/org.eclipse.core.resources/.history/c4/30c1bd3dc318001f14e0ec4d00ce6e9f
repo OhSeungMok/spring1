@@ -1,0 +1,15 @@
+package com.company.hello.member;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class MemberDao {
+	Map<String, MemberVo> memberDB = new HashMap<>();
+	
+	public void insertMember() {
+		System.out.println("MemberDao의 insertMember()메서드 호출됨");
+	}
+}

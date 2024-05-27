@@ -1,0 +1,21 @@
+package com.company.hello.member;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class MemberDao {
+	Map<String, MemberVo> memberDB = new HashMap<>();
+	
+	public void insertMember(MemberVo memberVo) {
+		System.out.println("MemberDao의 insertMember()메서드 호출됨");
+		System.out.println("전달된 ID = " + memberVo.getM_id());
+		System.out.println("전달된 PW = " + memberVo.getM_pw());
+		System.out.println("전달된 EMAIL = " + memberVo.getM_mail());
+		System.out.println("전달된 PHONE = " + memberVo.getM_phone());
+		
+		memberDB.put(memberVo.getM_id(), memberVo)
+	}
+}

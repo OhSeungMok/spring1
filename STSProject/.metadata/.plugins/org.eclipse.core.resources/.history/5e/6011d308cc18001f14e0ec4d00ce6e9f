@@ -1,0 +1,32 @@
+package com.company.hello.member;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+
+/*@Service 애너테이션을 명시하면 servlet-context.xml 파일에는 더 이상 빈객체 생성과 관련된 코드를 추가하지 않아도 됨 */
+@Service
+//@Component
+//@Repository
+public class MemberService {
+	
+	@Autowired //MemberDao의 객체가 자동 주입됨
+	MemberDao memberDao; //MemberDao 타입의 memberDao 선언 객체생성X
+	
+	public int signUpConfirm(MemberVo memberVo) {
+		System.out.println("MemberService의 signUpConfirm메서드 호출됨");
+		System.out.println("inserted id=" + memberVo.getM_id());
+	    System.out.println("inserted 암호=" + memberVo.getM_pw()) ;
+	    System.out.println("inserted 메일주소=" + memberVo.getM_mail());
+	    System.out.println("inserted 전화번호=" + memberVo.getM_phone());
+	    
+	    memberDao.insertMember(memberVo); //memberVo를 매개변수로 전달
+	    
+		return 0;
+	}
+	
+	public String signInConfirm(MemberVo memberVo) {
+		System.out.println("MemberService의 signInConfirm()메서드 호출됨");
+	}
+	
+}
