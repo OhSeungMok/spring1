@@ -1,0 +1,24 @@
+package com.office.library.admin.member;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
+
+@Component
+//@Repository도 가능함 저장소
+public class AdminMemberDao {
+
+	@Autowired
+	JdbcTemplate jdbcTemplate;
+	
+	public boolean isAdminMember(String a_m_id) {
+		System.out.println("AdminMemberDao의 isAdminMember()메서드");
+		/* db연결 후 AdminMember 확인 */
+		String sql = "select count(*) from tbl_admin_member where a_m_id ";//마지막에 한 칸을 띄는 이유는 sql이 붙여서 나오지 않기 때문
+		
+		int result = jdbcTemplate.queryForObject(sql, Integer.class , a_m_id);
+		
+		if (result > 0) return true;
+		else return false;
+	}
+}

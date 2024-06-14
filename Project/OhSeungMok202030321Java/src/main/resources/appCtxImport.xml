@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    <!-- @Autowired를 사용하기 위해 Context모듈 관련된 (ns)네임스페이스, 스키마를 추가해야함  -->
+    
+    <!-- annotation을 사용하기 위해 추가된 코드 -->
+   	<context:annotation-config/>
+    
+    <import resource="classpath:appCtx2.xml"/>
+    <import resource="classpath:appCtx3.xml"/>
+    
+<!-- InitSampleData 빈 -->
+	<bean id="initSampleData"
+	   class="OhSeungMok.ems.utils.InitSampleData">
+	   <!-- initSampleData = new InitSampleData와 같은 의미 -->
+	   <!-- 속성(property)는 setsNums과 같은 역할, initSampleData의 setsNums를 호출! -->
+	   <property name="sNums">
+	      <array>
+	         <value>hbs001</value>
+	         <value>hbs002</value>
+	         <value>hbs003</value>
+	         <value>hbs004</value>
+	         <value>hbs005</value>
+	      </array>
+	   </property>
+	   <!-- 속성(property)는 setsIds과 같은 역할, initSampleData의 setsIds를 호출! -->
+	   <property name="sIds">
+	      <array>
+	         <value>rabbit</value>
+	         <value>hippo</value>
+	         <value>raccoon</value>
+	         <value>elephant</value>
+	         <value>lion</value>
+	      </array>
+	   </property>
+	   <!-- 속성(property)는 setsPws과 같은 역할, initSampleData의 setsPws를 호출! -->
+	   <property name="sPws">
+	      <array>
+	         <value>p0001</value>
+	         <value>p0002</value>
+	         <value>p0003</value>
+	         <value>p0004</value>
+	         <value>p0005</value>
+	      </array>
+	   </property>
+	   <!-- 속성(property)는 setsNames과 같은 역할, initSampleData의 setsNames를 호출! -->
+	   <property name="sNames">
+	      <array>
+	         <value>agatha</value>
+	         <value>barbara</value>
+	         <value>chris</value>
+	         <value>doris</value>
+	         <value>elva</value>
+	      </array>
+	   </property>
+	   <!-- 속성(property)는 setsAges과 같은 역할, initSampleData의 setsAges를 호출! -->
+	   <property name="sAges">
+	      <array>
+	         <value>19</value>
+	         <value>22</value>
+	         <value>20</value>
+	         <value>27</value>
+	         <value>19</value>
+	      </array>
+	   </property>
+	   <!-- 속성(property)는 setsGenders과 같은 역할, initSampleData의 setsGenders를 호출! -->
+	   <property name="sGenders">
+	      <array>
+	         <value>M</value>
+	         <value>W</value>
+	         <value>W</value>
+	         <value>M</value>
+	         <value>M</value>
+	      </array>
+	   </property>
+	   <!-- 속성(property)는 setsMajors과 같은 역할, initSampleData의 setsMajors를 호출! -->
+	   <property name="sMajors">
+	      <array>
+	         <value>English</value>
+	         <value>Korean</value>
+	         <value>French</value>
+	         <value>Philosophy</value>
+	         <value>History</value>
+	      </array>
+	   </property>
+	</bean>
+	<!-- StudentDao 빈 생성 1,2,3개 만들기 -->
+	<!-- studentDao = new ch04_pjt_01.ems.member.dao.StudentDao();와 같은 의미 -->
+	<bean id = "studentDao1" class= "OhSeungMok.ems.member.dao.StudentDao">
+	<qualifier value="qualifierDao" />
+	</bean>
+
+	<bean id = "studentDao2" class= "OhSeungMok.ems.member.dao.StudentDao" />
+	
+	<bean id = "studentDao3" class= "OhSeungMok.ems.member.dao.StudentDao" />
+	
+	<!-- StudentRegisterService 빈 생성 -->
+    <bean id="studentRegisterService" class="OhSeungMok.ems.member.service.StudentRegisterService"/>
+    <!-- StudentAllSelectService 빈 생성 -->
+    <bean id="studentAllSelectService" class="OhSeungMok.ems.member.service.StudentAllSelectService"/>
+    
+    <!-- StudentSelectService 빈 생성 -->
+    <bean id="studentSelectService" class="OhSeungMok.ems.member.service.StudentSelectService"/>
+    
+    <!-- StudentModifyService 빈 생성 -->
+    <bean id="studentModifyService" class="OhSeungMok.ems.member.service.StudentModifyService"/>
+    
+    <!-- StudentDeleteService 빈 생성 -->
+    <bean id="studentDeleteService" class="OhSeungMok.ems.member.service.StudentDeleteService"/>
+    
+    <!-- PrintStudentInformationService 빈 생성 -->
+    <bean id="printStudentInformationService" class="OhSeungMok.ems.member.service.PrintStudentInformationService">
+       <!-- PrintStudentInformationService에 printStudentInformationService란 객체로 파라미터 -->
+       <constructor-arg ref="studentAllSelectService" />
+    </bean>
+    
+</beans>

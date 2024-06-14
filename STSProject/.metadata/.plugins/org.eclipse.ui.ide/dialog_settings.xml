@@ -43,6 +43,8 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="D:\Spring1\STSProject\ch06_pjt_01"/>
+			<item value="D:\Spring1\STSProject\BookRentalPjt"/>
 			<item value="D:\Spring1\STSProject\ch05_pjt_01"/>
 			<item value="D:\Spring1\STSProject\LegacyTemplatePjt"/>
 		</list>
@@ -50,8 +52,8 @@
 			<item value=""/>
 		</list>
 		<section name="ExternalProjectImportWizard.dialogBounds">
-			<item key="DIALOG_X_ORIGIN" value="299"/>
-			<item key="DIALOG_Y_ORIGIN" value="346"/>
+			<item key="DIALOG_X_ORIGIN" value="941"/>
+			<item key="DIALOG_Y_ORIGIN" value="353"/>
 			<item key="DIALOG_WIDTH" value="700"/>
 			<item key="DIALOG_HEIGHT" value="1024"/>
 			<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    <!-- @Autowired를 사용하기 위해 Context모듈 관련된 (ns)네임스페이스, 스키마를 추가해야함  -->
+    
+    <!-- annotation을 사용하기 위해 추가된 코드 -->
+   	<context:annotation-config/>
+    
+    <bean id="initSampleData" class="OhSeungMok202030321.contact.utils.InitSampleData">
+      <property name="ids">
+         <array>
+            <value>0494013</value>
+            <value>1091011</value>
+            <value>202030321</value>
+         </array>
+      </property>
+      <property name="names">
+         <array>
+            <value>이기자</value>
+            <value>김철수</value>
+            <value>오승목</value>
+         </array>
+      </property>
+      <property name="majors">
+         <array>
+            <value>컴퓨터공학</value>
+            <value>컴퓨터시스템</value>
+            <value>웹애플리케이션전공</value>
+         </array>
+      </property>
+   </bean>
+   
+   <!-- 왜 dao먼저 만드냐 먼저 쓰니까 -->
+   <bean id="contactDao" class="OhSeungMok202030321.contact.dao.ContactDao"/> 
+   
+   <!-- ContactRegisterService bean객체 생성 -->
+   <bean id="registerService" class="OhSeungMok202030321.contact.service.ContactRegisterService">
+   <!-- <constructor-arg ref="contactDao"/> --> <!-- 의존성 있는 객체를 주입시켜주기 위해 일단 주석 -->
+   </bean>
+   
+   <!-- ContactSearchService bean객체 생성 -->
+   <bean id="searchService" class="OhSeungMok202030321.contact.service.ContactSearchService">
+   <!-- <constructor-arg ref="contactDao"/> --> <!-- 의존성 있는 객체를 주입시켜주기 위해 일단 주석 -->
+   </bean>
+</beans>	

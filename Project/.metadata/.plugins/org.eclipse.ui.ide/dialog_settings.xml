@@ -12,6 +12,7 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="D:\Spring1\Project\ch06_pjt_01_homework"/>
 			<item value="C:\Users\ahr50\Downloads\Java 연습문제\test_Student"/>
 			<item value="D:\Spring1\Project\ch04_pjt_02"/>
 		</list>

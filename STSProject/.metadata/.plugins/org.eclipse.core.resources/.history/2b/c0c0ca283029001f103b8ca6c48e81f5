@@ -1,0 +1,15 @@
+package com.office.library.admin.member;
+
+import org.springframework.stereotype.Component;
+
+@Component
+//@Repository도 가능함 저장소
+public class AdminMemberDao {
+
+	public boolean isAdminMember(String a_m_id) {
+		System.out.println("AdminMemberDao의 isAdminMember()메서드");
+		/* db연결 */
+		String sql = "select count(*) from tbl_admin_member ";
+		return true;
+	}
+}
